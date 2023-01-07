@@ -1,5 +1,7 @@
 package com.clevermis.dao;
 
+import com.clevermis.entity.Forms;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -15,7 +17,7 @@ import java.util.Properties;
 public class DataBaseDao {
 
     /**
-    * @methodname  static initializer  的功能描述  TODO:静态代码块，在类加载的时候执行
+    * @methodname  static initializer  的功能描述   TODO:静态代码块，在类加载的时候执行
     *
     * @Param:  * @param null
     * @return:
@@ -34,7 +36,7 @@ public class DataBaseDao {
         private static String password;
 
         /**
-        * @methodname  init  的功能描述 TODO:初始化连接参数,从配置文件里获得
+        * @methodname  init  的功能描述  TODO:初始化连接参数,从配置文件里获得
         *
         * @Param:  * @param
         * @return: void
@@ -52,6 +54,7 @@ public class DataBaseDao {
         try {
             properties.load(inputStream);
         } catch (IOException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -62,7 +65,7 @@ public class DataBaseDao {
     }
 
     /**
-    * @methodname  getConnection  的功能描述 TODO:获取数据库连接
+    * @methodname  getConnection  的功能描述  TODO:获取数据库连接
     *
     * @Param:  * @param 
     * @return: java.sql.Connection
@@ -78,6 +81,7 @@ public class DataBaseDao {
             Class.forName(driver);
             connection= DriverManager.getConnection(url,username,password);
         }catch (Exception e){
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -85,56 +89,7 @@ public class DataBaseDao {
     }
 
     /**
-    * @methodname  execute  的功能描述 TODO:查询公共类
-    *
-    * @Param:  * @param connection
-     * @param pstm
-     * @param rs
-     * @param sql
-     * @param params
-    * @return: java.sql.ResultSet
-    * @throw: Exception
-    *
-    * @Author: Clevermis
-    * @version: V1.0.0
-    * @Date: 2023/1/7 11:34
-    */
-    public static ResultSet execute(Connection connection, PreparedStatement pstm, ResultSet rs, String sql, Object[] params)throws Exception{
-        pstm = connection.prepareStatement(sql);
-        for (int i = 0; i < params.length; i++) {
-            pstm.setObject(i+1,params[i]);
-        }
-        rs=pstm.executeQuery();
-        return rs;
-    }
-
-    /**
-    * @methodname  execute  的功能描述  TODO:增删改公共类
-    *
-    * @Param:  * @param connection
-     * @param pstm
-     * @param sql
-     * @param params
-    * @return: int
-    * @throw: Exception
-    *
-    * @Author: Clevermis
-    * @version: V1.0.0
-    * @Date: 2023/1/7 11:40
-    */
-    public static int execute(Connection connection, PreparedStatement pstm, String sql, Object[] params) throws Exception{
-        int updateRows = 0;
-        pstm = connection.prepareStatement(sql);
-
-        for(int i = 0; i < params.length; i++){
-            pstm.setObject(i+1, params[i]);
-        }
-        updateRows = pstm.executeUpdate();
-        return updateRows;
-    }
-
-    /**
-    * @methodname  closeResource  的功能描述 TODO:释放资源
+    * @methodname  closeResource  的功能描述  TODO:释放资源
     *
     * @Param:  * @param connection
      * @param pstm

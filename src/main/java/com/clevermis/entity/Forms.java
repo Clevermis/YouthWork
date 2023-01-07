@@ -23,6 +23,17 @@ public class Forms {
     /**状态*/
     private Date updatedAt;
 
+    public Forms(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Forms(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+
     public Integer getId() {
         return id;
     }
