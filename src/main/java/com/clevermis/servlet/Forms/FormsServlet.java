@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import static java.lang.System.out;
 
@@ -40,9 +41,12 @@ public class FormsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         FormsServiceImpl formsService = new FormsServiceImpl();
+        PrintWriter out = response.getWriter();
         Object formsList = formsService.getFormsList();
-        Object jsonArray = JSON.toJSONString(formsList);
-        response.getWriter().println(jsonArray);
+        String jsonArray = JSON.toJSONString(formsList);
+        out.write(jsonArray);
+        out.flush();
+        out.close();
     }
 
     @Override
