@@ -1,3 +1,4 @@
+
 package com.clevermis.entity;
 
 import java.sql.Date;
@@ -10,22 +11,53 @@ import java.sql.Date;
  * @since JDK 1.8
  **/
 public class Attachments {
-    /**附件ID*/
+    /**
+     * 附件ID
+     */
     private Integer id;
-    /**记录ID*/
+    /**
+     * 记录ID
+     */
     private Integer record_id;
-    /**文件名称*/
+    /**
+     * 文件名称
+     */
     private String name;
-    /**文件大小*/
+    /**
+     * 文件大小
+     */
     private String size;
-    /**时间戳*/
+    /**
+     * 时间戳
+     */
     private Date timestamps;
-    /**删除*/
+    /**
+     * 删除
+     */
     private Date softDeletes;
-    /**创建时间*/
+    /**
+     * 创建时间
+     */
     private Date createdAt;
-    /**状态*/
+    /**
+     * 状态
+     */
     private Date updatedAt;
+    private String[] att_img;
+
+    public String[] getAtt_img() {
+        return att_img;
+    }
+
+    public void setAtt_img(String[] att_img) {
+        this.att_img = att_img;
+    }
+
+    public Attachments(Integer record_id, String[] att_img) {
+        this.record_id = record_id;
+        this.att_img = att_img;
+
+    }
 
     public Integer getId() {
         return id;
