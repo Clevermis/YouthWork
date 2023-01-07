@@ -10,17 +10,29 @@ import java.sql.Date;
  * @since JDK 1.8
  **/
 public class Forms {
-    /**表单ID*/
+    /**
+     * 表单ID
+     */
     private Integer id;
-    /**表单名称*/
+    /**
+     * 表单名称
+     */
     private String name;
-    /**时间戳*/
+    /**
+     * 时间戳
+     */
     private Date timestamps;
-    /**删除*/
+    /**
+     * 删除
+     */
     private Date softDeletes;
-    /**创建时间*/
+    /**
+     * 创建时间
+     */
     private Date createdAt;
-    /**状态*/
+    /**
+     * 状态
+     */
     private Date updatedAt;
 
     public Forms(Integer id, String name) {

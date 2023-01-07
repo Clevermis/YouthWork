@@ -11,11 +11,14 @@ import com.clevermis.entity.Forms;
  * @create: 2023-01-07 13:03
  * @since JDK 1.8
  **/
-public class FormsServiceImpl implements FormsService{
+public class FormsServiceImpl implements FormsService {
     private FormsDao forms;
-    public FormsServiceImpl(){
+
+    public FormsServiceImpl() {
+//        forms = new FormsDaoImpl();
         forms = new FormsDaoImpl();
     }
+
     @Override
     public Object getFormsList() {
         return forms.getforms();

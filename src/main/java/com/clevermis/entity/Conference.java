@@ -10,21 +10,37 @@ import java.sql.Date;
  * @since JDK 1.8
  **/
 public class Conference {
-    /**路径ID*/
+    /**
+     * 路径ID
+     */
     private Integer conference_id;
-    /**附件ID*/
+    /**
+     * 附件ID
+     */
     private Integer id;
-    /**文件名称*/
+    /**
+     * 文件名称
+     */
     private String name;
-    /**文件路径*/
+    /**
+     * 文件路径
+     */
     private String img;
-    /**时间戳*/
+    /**
+     * 时间戳
+     */
     private Date timestamps;
-    /**删除*/
+    /**
+     * 删除
+     */
     private Date softDeletes;
-    /**创建时间*/
+    /**
+     * 创建时间
+     */
     private Date createdAt;
-    /**状态*/
+    /**
+     * 状态
+     */
     private Date updatedAt;
 
     public Integer getConference_id() {

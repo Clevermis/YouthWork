@@ -27,17 +27,15 @@ import static java.lang.System.out;
 @WebServlet(name = "FormsServlet", value = "/FormsList")
 public class FormsServlet extends HttpServlet {
     /**
-    * @methodname  doGet  的功能描述 TODO:打印表单ID及表单名称
-    *
-    * @Param:  * @param request
      * @param response
-    * @return: void
-    * @throw: ServletException, IOException
-    *
-    * @Author: Clevermis
-    * @version: V1.0.0
-    * @Date: 2023/1/7 13:30
-    */
+     * @methodname doGet  的功能描述 TODO:打印表单ID及表单名称
+     * @Param: * @param request
+     * @return: void
+     * @throw: ServletException, IOException
+     * @Author: Clevermis
+     * @version: V1.0.0
+     * @Date: 2023/1/7 13:30
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         FormsServiceImpl formsService = new FormsServiceImpl();

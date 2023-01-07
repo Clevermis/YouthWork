@@ -27,6 +27,14 @@ public class Records {
     /**状态*/
     private Date updatedAt;
 
+    public Records(Integer id, Integer form_id, String name, String code) {
+        this.id = id;
+        this.form_id = form_id;
+        this.name = name;
+        this.code = code;
+    }
+
+
     public Integer getId() {
         return id;
     }
@@ -104,4 +112,8 @@ public class Records {
                 ", updatedAt=" + updatedAt +
                 '}';
     }
+    public void Records(int goods_id, int sort_id, String goods_name, String goods_price, String goods_describe, java.util.Date goods_time, int user_id) {
+
+    }
+
 }
