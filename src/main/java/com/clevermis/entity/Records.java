@@ -51,6 +51,10 @@ public class Records {
     this.code = code;
   }
 
+  public Records(int form_id) {
+    this.form_id=form_id;
+  }
+
 
   public Integer getId() {
     return id;
