@@ -10,114 +10,108 @@ import java.sql.Date;
  * @since JDK 1.8
  **/
 public class Conference {
-    /**
-     * 路径ID
-     */
-    private Integer conference_id;
-    /**
-     * 附件ID
-     */
-    private Integer id;
-    /**
-     * 文件名称
-     */
-    private String name;
-    /**
-     * 文件路径
-     */
-    private String img;
-    /**
-     * 时间戳
-     */
-    private Date timestamps;
-    /**
-     * 删除
-     */
-    private Date softDeletes;
-    /**
-     * 创建时间
-     */
-    private Date createdAt;
-    /**
-     * 状态
-     */
-    private Date updatedAt;
 
-    public Integer getConference_id() {
-        return conference_id;
-    }
+  /**
+   * 路径ID
+   */
+  private Integer conference_id;
+  /**
+   * 附件ID
+   */
+  private Integer id;
+  /**
+   * 文件名称
+   */
+  private String name;
+  /**
+   * 文件路径
+   */
+  private String img;
+  /**
+   * 时间戳
+   */
+  private Date timestamps;
+  /**
+   * 删除
+   */
+  private Date softDeletes;
+  /**
+   * 创建时间
+   */
+  private Date createdAt;
+  /**
+   * 状态
+   */
+  private Date updatedAt;
 
-    public void setConference_id(Integer conference_id) {
-        this.conference_id = conference_id;
-    }
+  public Integer getConference_id() {
+    return conference_id;
+  }
 
-    public Integer getId() {
-        return id;
-    }
+  public void setConference_id(Integer conference_id) {
+    this.conference_id = conference_id;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getImg() {
-        return img;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
+  public String getImg() {
+    return img;
+  }
 
-    public Date getTimestamps() {
-        return timestamps;
-    }
+  public void setImg(String img) {
+    this.img = img;
+  }
 
-    public void setTimestamps(Date timestamps) {
-        this.timestamps = timestamps;
-    }
+  public Date getTimestamps() {
+    return timestamps;
+  }
 
-    public Date getSoftDeletes() {
-        return softDeletes;
-    }
+  public void setTimestamps(Date timestamps) {
+    this.timestamps = timestamps;
+  }
 
-    public void setSoftDeletes(Date softDeletes) {
-        this.softDeletes = softDeletes;
-    }
+  public Date getSoftDeletes() {
+    return softDeletes;
+  }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+  public void setSoftDeletes(Date softDeletes) {
+    this.softDeletes = softDeletes;
+  }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+  public Date getCreatedAt() {
+    return createdAt;
+  }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
+  }
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+  public Date getUpdatedAt() {
+    return updatedAt;
+  }
 
-    @Override
-    public String toString() {
-        return "Conference{" +
-                "conference_id=" + conference_id +
-                ", id=" + id +
-                ", name='" + name + '\'' +
-                ", img='" + img + '\'' +
-                ", timestamps=" + timestamps +
-                ", softDeletes=" + softDeletes +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
-    }
+  public void setUpdatedAt(Date updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  @Override
+  public String toString() {
+    return "Conference{" + "conference_id=" + conference_id + ", id=" + id + ", name='" + name
+        + '\'' + ", img='" + img + '\'' + ", timestamps=" + timestamps + ", softDeletes="
+        + softDeletes + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
+  }
 }

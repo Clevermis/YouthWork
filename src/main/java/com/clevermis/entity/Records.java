@@ -10,110 +10,122 @@ import java.sql.Date;
  * @since JDK 1.8
  **/
 public class Records {
-    /**记录ID*/
-    private Integer id;
-    /**表单ID*/
-    private Integer form_id;
-    /**姓名*/
-    private String name;
-    /**学号*/
-    private String code;
-    /**时间戳*/
-    private Date timestamps;
-    /**删除*/
-    private Date softDeletes;
-    /**创建时间*/
-    private Date createdAt;
-    /**状态*/
-    private Date updatedAt;
 
-    public Records(Integer id, Integer form_id, String name, String code) {
-        this.id = id;
-        this.form_id = form_id;
-        this.name = name;
-        this.code = code;
-    }
+  /**
+   * 记录ID
+   */
+  private Integer id;
+  /**
+   * 表单ID
+   */
+  private Integer form_id;
+  /**
+   * 姓名
+   */
+  private String name;
+  /**
+   * 学号
+   */
+  private String code;
+  /**
+   * 时间戳
+   */
+  private Date timestamps;
+  /**
+   * 删除
+   */
+  private Date softDeletes;
+  /**
+   * 创建时间
+   */
+  private Date createdAt;
+  /**
+   * 状态
+   */
+  private Date updatedAt;
+
+  public Records(Integer id, Integer form_id, String name, String code) {
+    this.id = id;
+    this.form_id = form_id;
+    this.name = name;
+    this.code = code;
+  }
 
 
-    public Integer getId() {
-        return id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public Integer getForm_id() {
-        return form_id;
-    }
+  public Integer getForm_id() {
+    return form_id;
+  }
 
-    public void setForm_id(Integer form_id) {
-        this.form_id = form_id;
-    }
+  public void setForm_id(Integer form_id) {
+    this.form_id = form_id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getCode() {
-        return code;
-    }
+  public String getCode() {
+    return code;
+  }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+  public void setCode(String code) {
+    this.code = code;
+  }
 
-    public Date getTimestamps() {
-        return timestamps;
-    }
+  public Date getTimestamps() {
+    return timestamps;
+  }
 
-    public void setTimestamps(Date timestamps) {
-        this.timestamps = timestamps;
-    }
+  public void setTimestamps(Date timestamps) {
+    this.timestamps = timestamps;
+  }
 
-    public Date getSoftDeletes() {
-        return softDeletes;
-    }
+  public Date getSoftDeletes() {
+    return softDeletes;
+  }
 
-    public void setSoftDeletes(Date softDeletes) {
-        this.softDeletes = softDeletes;
-    }
+  public void setSoftDeletes(Date softDeletes) {
+    this.softDeletes = softDeletes;
+  }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+  public Date getCreatedAt() {
+    return createdAt;
+  }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
+  }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+  public Date getUpdatedAt() {
+    return updatedAt;
+  }
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+  public void setUpdatedAt(Date updatedAt) {
+    this.updatedAt = updatedAt;
+  }
 
-    @Override
-    public String toString() {
-        return "Records{" +
-                "id=" + id +
-                ", form_id=" + form_id +
-                ", name='" + name + '\'' +
-                ", code='" + code + '\'' +
-                ", timestamps=" + timestamps +
-                ", softDeletes=" + softDeletes +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
-    }
-    public void Records(int goods_id, int sort_id, String goods_name, String goods_price, String goods_describe, java.util.Date goods_time, int user_id) {
+  @Override
+  public String toString() {
+    return "Records{" + "id=" + id + ", form_id=" + form_id + ", name='" + name + '\'' + ", code='"
+        + code + '\'' + ", timestamps=" + timestamps + ", softDeletes=" + softDeletes
+        + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
+  }
 
-    }
+  public void Records(int goods_id, int sort_id, String goods_name, String goods_price,
+      String goods_describe, java.util.Date goods_time, int user_id) {
+
+  }
 
 }

@@ -5,18 +5,18 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <!--字符编码过滤器    -->
+  <!--character encoding filter    -->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
     <filter-class>com.clevermis.filter.CharacterEncodingFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
-    <!--只要是 /的任何请求，都会经过这个过滤器-->
+    <!--Any request for / will go through this filter-->
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <!--  默认Session过期时间-->
+  <!--  Default Session expiration time-->
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>

@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.clevermis</groupId>
@@ -8,68 +9,68 @@
   <name>YouthWork Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>junit</groupId>-->
-<!--      <artifactId>junit</artifactId>-->
-<!--      <version>3.8.1</version>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
-      <dependency>
-          <groupId>org.testng</groupId>
-          <artifactId>testng</artifactId>
-          <version>6.14.3</version>
-      </dependency>
-<!--    <dependency>-->
-<!--      <groupId>javax.servlet</groupId>-->
-<!--      <artifactId>servlet-api</artifactId>-->
-<!--      <version>2.5</version>-->
-<!--    </dependency>-->
-      <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
-      <dependency>
-          <groupId>jakarta.servlet</groupId>
-          <artifactId>jakarta.servlet-api</artifactId>
-          <version>4.0.4</version>
-          <scope>provided</scope>
-      </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>junit</groupId>-->
+    <!--      <artifactId>junit</artifactId>-->
+    <!--      <version>3.8.1</version>-->
+    <!--      <scope>test</scope>-->
+    <!--    </dependency>-->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.14.3</version>
+    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>javax.servlet</groupId>-->
+    <!--      <artifactId>servlet-api</artifactId>-->
+    <!--      <version>2.5</version>-->
+    <!--    </dependency>-->
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>4.0.4</version>
+      <scope>provided</scope>
+    </dependency>
 
-      <dependency>
+    <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.31</version>
     </dependency>
-<!--      <dependency>-->
-<!--          <groupId>org.testng</groupId>-->
-<!--          <artifactId>testng</artifactId>-->
-<!--          <version>RELEASE</version>-->
-<!--          <scope>compile</scope>-->
-<!--      </dependency>-->
-      <dependency>
-          <groupId>com.alibaba</groupId>
-          <artifactId>fastjson</artifactId>
-          <version>1.2.80</version>
-      </dependency>
+    <!--      <dependency>-->
+    <!--          <groupId>org.testng</groupId>-->
+    <!--          <artifactId>testng</artifactId>-->
+    <!--          <version>RELEASE</version>-->
+    <!--          <scope>compile</scope>-->
+    <!--      </dependency>-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.80</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>YouthWork</finalName>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                  <source>8</source>
-                  <target>8</target>
-              </configuration>
-          </plugin>
-      </plugins>
-      <!--      <plugins>-->
-<!--          <plugin>-->
-<!--              <groupId>org.apache.maven.plugins</groupId>-->
-<!--              <artifactId>maven-compiler-plugin</artifactId>-->
-<!--              <configuration>-->
-<!--                  <source>6</source>-->
-<!--                  <target>6</target>-->
-<!--              </configuration>-->
-<!--          </plugin>-->
-<!--      </plugins>-->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+    <!--      <plugins>-->
+    <!--          <plugin>-->
+    <!--              <groupId>org.apache.maven.plugins</groupId>-->
+    <!--              <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--              <configuration>-->
+    <!--                  <source>6</source>-->
+    <!--                  <target>6</target>-->
+    <!--              </configuration>-->
+    <!--          </plugin>-->
+    <!--      </plugins>-->
   </build>
 </project>

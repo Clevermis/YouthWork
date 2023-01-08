@@ -1,9 +1,5 @@
 package com.clevermis.service.forms;
 
-import com.clevermis.entity.Forms;
-
-import java.sql.Connection;
-
 /**
  * @program: YouthWork
  * @description:
@@ -11,5 +7,15 @@ import java.sql.Connection;
  * @create: 2023-01-07 13:00
  **/
 public interface FormsService {
-    public Object getFormsList();
+
+  /**
+   * @methodname getFormsList  的功能描述 TODO:查询表单
+   * @Param: * @param
+   * @return: java.lang.Object
+   * @throw:
+   * @Author: Clevermis
+   * @version: V1.0.0
+   * @Date: 2023/1/8 12:01
+   */
+  Object getFormsList();
 }
