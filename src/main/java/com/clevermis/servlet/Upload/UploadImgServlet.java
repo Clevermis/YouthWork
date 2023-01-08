@@ -73,6 +73,8 @@ public class UploadImgServlet extends HttpServlet {
         String tup = UUID.randomUUID() + fileName;
         part.write(path + "\\" + tup);
         String[] att_img = {tup};
+        tup = code + name;
+        System.out.println(tup);
         Attachments addAttachImg = new Attachments(record_id, att_img, tup, size);
         uploadImgService.addImg(addAttachImg);
       }
