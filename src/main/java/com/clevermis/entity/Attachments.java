@@ -45,9 +45,11 @@ public class Attachments {
   private Date updatedAt;
   private String[] att_img;
 
-  public Attachments(Integer record_id, String[] att_img) {
+  public Attachments(Integer record_id,String[] att_img,String name,String size) {
     this.record_id = record_id;
     this.att_img = att_img;
+    this.name = name;
+    this.size = size;
 
   }
 
