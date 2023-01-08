@@ -46,6 +46,10 @@ public class Forms {
     this.name = name;
   }
 
+  public Forms(String name) {
+    this.name=name;
+  }
+
 
   public Integer getId() {
     return id;
