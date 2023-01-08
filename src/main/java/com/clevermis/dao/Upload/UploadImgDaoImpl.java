@@ -61,7 +61,7 @@ public class UploadImgDaoImpl implements UploadImgDao {
    * @version: V1.0.0
    * @Date: 2023/1/8 12:03
    */
-  public boolean addFiles(Records goodsBean, int id, int form_id, String name, String code) {
+  public boolean addFiles(Records records, int id, int form_id, String name, String code) {
     Connection conn = null;
     PreparedStatement pstm = null;
     ResultSet rs = null;
