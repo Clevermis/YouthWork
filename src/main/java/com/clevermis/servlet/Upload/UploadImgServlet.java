@@ -75,7 +75,7 @@ public class UploadImgServlet extends HttpServlet {
     /** windows存放每个表单目录路径  */
     String url = path + a + form_id + PLATFORM_l;
     /** 单个文件时文件名 */
-    String nc = name + code;
+    String nc = code + name;
     /** windows一次存放多个文件时的文件目录*/
     String path4 = url + nc + PLATFORM_l;
     /** windows创建单文件目录 */
