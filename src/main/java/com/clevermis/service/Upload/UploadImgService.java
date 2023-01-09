@@ -38,13 +38,14 @@ public interface UploadImgService {
   boolean addFile(Records records, int id, int form_id, String name, String code);
 
   /**
+   * @param flag
    * @methodname addImg  的功能描述 TODO:向数据库中添加文件信息
    * @Param: * @param addAttachImg
    * @return: void
    * @throw:
    * @Author: Clevermis
    * @version: V1.0.0
-   * @Date: 2023/1/8 11:58
+   * @Date: 2023/1/9 14:53
    */
-  void addImg(Attachments addAttachImg);
+  void addImg(Attachments addAttachImg, int flag);
 }

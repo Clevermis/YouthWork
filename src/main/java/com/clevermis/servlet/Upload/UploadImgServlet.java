@@ -27,6 +27,11 @@ import javax.servlet.http.Part;
 public class UploadImgServlet extends HttpServlet {
 
   /**
+   * 如果将文件路径地址保存为window格式上，则修改 PLATFORM_VERSION 值为 false
+   */
+  public final static boolean PLATFORM_VERSION = true;
+
+  /**
    * @param response
    * @methodname doGet  的功能描述 TODO:上传文件 若成功则返回true 失败则返回false
    * @Param: * @param request
@@ -45,24 +50,34 @@ public class UploadImgServlet extends HttpServlet {
     response.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS,DELETE");
     response.setHeader("Access-Control-Max-Age", "3600");
 
+    String PLATFORM_l = null;
+    int flag = 0;
+    if (PLATFORM_VERSION) {
+      PLATFORM_l = "/";
+      flag = 0;
+    } else {
+      /** windows上运行 */
+      PLATFORM_l = "\\";
+      flag = 1;
+    }
+
     /**获取普通表单项*/
     String name = request.getParameter("name");
     String code = request.getParameter("code");
     int form_id = Integer.parseInt(request.getParameter("form_id"));
     String size = request.getParameter("size");
     int num = Integer.parseInt(request.getParameter("num"));
-    System.out.println(num);
 
     /** 得到当前web项目的根目录*/
     String path = this.getServletContext().getRealPath("/");
     /** windows目录路径 static\imgs\ */
-    String a = "static\\imgs\\";
+    String a = "static" + PLATFORM_l + "imgs" + PLATFORM_l;
     /** windows存放每个表单目录路径  */
-    String url = path + a + form_id + "\\";
+    String url = path + a + form_id + PLATFORM_l;
     /** 单个文件时文件名 */
     String nc = name + code;
     /** windows一次存放多个文件时的文件目录*/
-    String path4 = url + nc + "\\";
+    String path4 = url + nc + PLATFORM_l;
     /** windows创建单文件目录 */
     File file = new File(url);
     /** windows创建多文件目录 */
@@ -102,24 +117,21 @@ public class UploadImgServlet extends HttpServlet {
           /** 每个文件名又前缀+后缀组成（前缀为从x=1开始的数字）*/
           String x1 = x + fileName;
           part.write(path4 + x1);
-//          String x3 = form_id + "\\\\" + nc + "\\\\" + x1;
-          String x3 = form_id + "\\\\" + nc ;
+          String x3 = form_id + PLATFORM_l + nc;
           att_img = new String[]{x3};
           String tup3 = x + fileName;
           x++;
           Attachments addAttachImg = new Attachments(record_id, att_img, tup3, size);
-          uploadImgService.addImg(addAttachImg);
+          uploadImgService.addImg(addAttachImg, flag);
         } else {
           tup = code + name;
           /** 单个文件时文件名*/
           String tup1 = code + name + fileName;
           part.write(url + tup1);
-//          String x2 = form_id + "\\" + tup1;
           String x2 = String.valueOf(form_id);
           att_img = new String[]{x2};
           Attachments addAttachImg = new Attachments(record_id, att_img, tup, size);
-          uploadImgService.addImg(addAttachImg);
-
+          uploadImgService.addImg(addAttachImg, flag);
         }
       }
     }
@@ -140,7 +152,6 @@ public class UploadImgServlet extends HttpServlet {
     String fname = header.substring(header.lastIndexOf("."), header.length() - 1);
     return fname;
   }
-
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)

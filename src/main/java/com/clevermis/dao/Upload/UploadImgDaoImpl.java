@@ -87,15 +87,16 @@ public class UploadImgDaoImpl implements UploadImgDao {
   }
 
   /**
-   * @methodname addImg  的功能描述 TODO：添加文件（图片）信息
+   * @param flag
+   * @methodname addImg  的功能描述 TODO:添加文件（图片）信息
    * @Param: * @param addAttachImg
    * @return: void
    * @throw:
    * @Author: Clevermis
    * @version: V1.0.0
-   * @Date: 2023/1/8 12:03
+   * @Date: 2023/1/9 14:54
    */
-  public void addImg(Attachments addAttachImg) {
+  public void addImg(Attachments addAttachImg, int flag) {
     int record_id = addAttachImg.getRecord_id();
     String[] att_img = addAttachImg.getAtt_img();
     String fileName = addAttachImg.getName();
@@ -104,20 +105,43 @@ public class UploadImgDaoImpl implements UploadImgDao {
     PreparedStatement pstm = null;
     ResultSet rs = null;
     boolean b = true;
-    try {
-      conn = DataBaseDao.getConnection();
-      for (int i = 0; i < att_img.length; i++) {
-        String sql =
-            "insert into attachments (record_id,att_img,name,size) values(" + record_id + "," + "'"
-                + "\\\\" + "static" + "\\\\" + "imgs" + "\\\\" + att_img[i] + "'" + "," + "'"
-                + fileName + "'" + "," + "'" + size + "'" + ")";
-        pstm = conn.prepareStatement(sql);
-        pstm.execute();
+    if (flag == 0) {
+      /**  windows*/
+      try {
+        conn = DataBaseDao.getConnection();
+        for (int i = 0; i < att_img.length; i++) {
+          String sql =
+              "insert into attachments (record_id,att_img,name,size) values(" + record_id + ","
+                  + "'" + "/" + "static" + "/" + "imgs" + "/" + att_img[i] + "'" + "," + "'"
+                  + fileName + "'" + "," + "'" + size + "'" + ")";
+          pstm = conn.prepareStatement(sql);
+          pstm.execute();
+        }
+      } catch (SQLException throwables) {
+        throwables.printStackTrace();
+      } finally {
+        DataBaseDao.closeResource(conn, pstm, rs);
       }
-    } catch (SQLException throwables) {
-      throwables.printStackTrace();
-    } finally {
-      DataBaseDao.closeResource(conn, pstm, rs);
+    } else {
+      try {
+        conn = DataBaseDao.getConnection();
+        for (int i = 0; i < att_img.length; i++) {
+          String sql =
+              "insert into attachments (record_id,att_img,name,size) values(" + record_id + ","
+                  + "'" + "\\\\" + "static" + "\\\\" + "imgs" + "\\\\" + att_img[i] + "'" + ","
+                  + "'" + fileName + "'" + "," + "'" + size + "'" + ")";
+          pstm = conn.prepareStatement(sql);
+          pstm.execute();
+        }
+      } catch (SQLException throwables) {
+        throwables.printStackTrace();
+      } finally {
+        DataBaseDao.closeResource(conn, pstm, rs);
+      }
     }
   }
 }
+
+
+
+

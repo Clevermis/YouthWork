@@ -53,16 +53,17 @@ public class UploadImgServiceImpl implements UploadImgService {
   }
 
   /**
-   * @methodname addImg  的功能描述 TODO： 向数据库中添加文件信息
+   * @param flag
+   * @methodname addImg  的功能描述 TODO:向数据库中添加文件信息
    * @Param: * @param addAttachImg
    * @return: void
    * @throw:
    * @Author: Clevermis
    * @version: V1.0.0
-   * @Date: 2023/1/8 11:51
+   * @Date: 2023/1/9 14:53
    */
-  public void addImg(Attachments addAttachImg) {
-    uploadImgDao.addImg(addAttachImg);
+  public void addImg(Attachments addAttachImg, int flag) {
+    uploadImgDao.addImg(addAttachImg, flag);
   }
 
 }
