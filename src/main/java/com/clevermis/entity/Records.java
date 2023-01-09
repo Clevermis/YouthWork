@@ -1,6 +1,7 @@
 package com.clevermis.entity;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * @program: YouthWork
@@ -28,21 +29,13 @@ public class Records {
    */
   private String code;
   /**
-   * 时间戳
-   */
-  private Date timestamps;
-  /**
-   * 删除
-   */
-  private Date softDeletes;
-  /**
    * 创建时间
    */
-  private Date createdAt;
+  private Timestamp createdAt;
   /**
    * 状态
    */
-  private Date updatedAt;
+  private Timestamp updatedAt;
 
   public Records(Integer id, Integer form_id, String name, String code) {
     this.id = id;
@@ -88,43 +81,32 @@ public class Records {
     this.code = code;
   }
 
-  public Date getTimestamps() {
-    return timestamps;
-  }
-
-  public void setTimestamps(Date timestamps) {
-    this.timestamps = timestamps;
-  }
-
-  public Date getSoftDeletes() {
-    return softDeletes;
-  }
-
-  public void setSoftDeletes(Date softDeletes) {
-    this.softDeletes = softDeletes;
-  }
-
-  public Date getCreatedAt() {
+  public Timestamp getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Date createdAt) {
+  public void setCreatedAt(Timestamp createdAt) {
     this.createdAt = createdAt;
   }
 
-  public Date getUpdatedAt() {
+  public Timestamp getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Date updatedAt) {
+  public void setUpdatedAt(Timestamp updatedAt) {
     this.updatedAt = updatedAt;
   }
 
   @Override
   public String toString() {
-    return "Records{" + "id=" + id + ", form_id=" + form_id + ", name='" + name + '\'' + ", code='"
-        + code + '\'' + ", timestamps=" + timestamps + ", softDeletes=" + softDeletes
-        + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
+    return "Records{" +
+        "id=" + id +
+        ", form_id=" + form_id +
+        ", name='" + name + '\'' +
+        ", code='" + code + '\'' +
+        ", createdAt=" + createdAt +
+        ", updatedAt=" + updatedAt +
+        '}';
   }
 
   public void Records(int goods_id, int sort_id, String goods_name, String goods_price,

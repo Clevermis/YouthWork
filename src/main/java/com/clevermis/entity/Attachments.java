@@ -1,6 +1,7 @@
 package com.clevermis.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Arrays;
 
 /**
  * @program: YouthWork
@@ -28,24 +29,16 @@ public class Attachments {
    */
   private String size;
   /**
-   * 时间戳
-   */
-  private Date timestamps;
-  /**
-   * 删除
-   */
-  private Date softDeletes;
-  /**
    * 创建时间
    */
-  private Date createdAt;
+  private Timestamp createdAt;
   /**
    * 状态
    */
-  private Date updatedAt;
+  private Timestamp updatedAt;
   private String[] att_img;
 
-  public Attachments(Integer record_id,String[] att_img,String name,String size) {
+  public Attachments(Integer record_id, String[] att_img, String name, String size) {
     this.record_id = record_id;
     this.att_img = att_img;
     this.name = name;
@@ -93,42 +86,27 @@ public class Attachments {
     this.size = size;
   }
 
-  public Date getTimestamps() {
-    return timestamps;
-  }
 
-  public void setTimestamps(Date timestamps) {
-    this.timestamps = timestamps;
-  }
-
-  public Date getSoftDeletes() {
-    return softDeletes;
-  }
-
-  public void setSoftDeletes(Date softDeletes) {
-    this.softDeletes = softDeletes;
-  }
-
-  public Date getCreatedAt() {
+  public Timestamp getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Date createdAt) {
+  public void setCreatedAt(Timestamp createdAt) {
     this.createdAt = createdAt;
   }
 
-  public Date getUpdatedAt() {
+  public Timestamp getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Date updatedAt) {
+  public void setUpdatedAt(Timestamp updatedAt) {
     this.updatedAt = updatedAt;
   }
 
   @Override
   public String toString() {
     return "Attachments{" + "id=" + id + ", record_id=" + record_id + ", name='" + name + '\''
-        + ", size='" + size + '\'' + ", timestamps=" + timestamps + ", softDeletes=" + softDeletes
-        + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
+        + ", size='" + size + '\'' + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
+        + ", att_img=" + Arrays.toString(att_img) + '}';
   }
 }

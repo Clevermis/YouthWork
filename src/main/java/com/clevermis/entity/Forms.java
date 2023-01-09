@@ -1,6 +1,7 @@
 package com.clevermis.entity;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * @program: YouthWork
@@ -20,21 +21,13 @@ public class Forms {
    */
   private String name;
   /**
-   * 时间戳
-   */
-  private Date timestamps;
-  /**
-   * 删除
-   */
-  private Date softDeletes;
-  /**
    * 创建时间
    */
-  private Date createdAt;
+  private Timestamp createdAt;
   /**
    * 状态
    */
-  private Date updatedAt;
+  private Timestamp updatedAt;
 
   public Forms(Integer id, String name) {
     this.id = id;
@@ -47,7 +40,7 @@ public class Forms {
   }
 
   public Forms(String name) {
-    this.name=name;
+    this.name = name;
   }
 
 
@@ -67,43 +60,30 @@ public class Forms {
     this.name = name;
   }
 
-  public Date getTimestamps() {
-    return timestamps;
-  }
-
-  public void setTimestamps(Date timestamps) {
-    this.timestamps = timestamps;
-  }
-
-  public Date getSoftDeletes() {
-    return softDeletes;
-  }
-
-  public void setSoftDeletes(Date softDeletes) {
-    this.softDeletes = softDeletes;
-  }
-
-  public Date getCreatedAt() {
+  public Timestamp getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Date createdAt) {
+  public void setCreatedAt(Timestamp createdAt) {
     this.createdAt = createdAt;
   }
 
-  public Date getUpdatedAt() {
+  public Timestamp getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Date updatedAt) {
+  public void setUpdatedAt(Timestamp updatedAt) {
     this.updatedAt = updatedAt;
   }
 
   @Override
   public String toString() {
-    return "Forms{" + "id=" + id + ", name='" + name + '\'' + ", timestamps=" + timestamps
-        + ", softDeletes=" + softDeletes + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
-        + '}';
+    return "Forms{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", createdAt=" + createdAt +
+        ", updatedAt=" + updatedAt +
+        '}';
   }
 }
 
