@@ -1,6 +1,6 @@
 # YouthWork
 
-这是仿照[work](https://github.com/ss098/work) 制作出收集文件并打包的工具，用于收集青年大学习截图等
+这是仿照[work](https://github.com/ss098/work) 制作出的收集文件并打包工具，用于收集青年大学习截图等
 <br />
 原项目后端语言采用PHP,本项目为java
 ## Getting Started Guide ##
