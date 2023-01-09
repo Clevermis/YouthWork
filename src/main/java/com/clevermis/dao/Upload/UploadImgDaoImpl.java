@@ -107,13 +107,10 @@ public class UploadImgDaoImpl implements UploadImgDao {
     try {
       conn = DataBaseDao.getConnection();
       for (int i = 0; i < att_img.length; i++) {
-//        String sql = "insert into attachments (record_id,att_img) values(" + record_id + "," + "'"
-//            + "http://localhost:8080/static/imgs/" + att_img[i] + "'" + ")";
         String sql =
             "insert into attachments (record_id,att_img,name,size) values(" + record_id + "," + "'"
-                + "http://localhost:8080/Interfaces/statics/imgs/" + att_img[i] + "'" + "," + "'"
+                + "\\\\" + "static" + "\\\\" + "imgs" + "\\\\" + att_img[i] + "'" + "," + "'"
                 + fileName + "'" + "," + "'" + size + "'" + ")";
-//
         pstm = conn.prepareStatement(sql);
         pstm.execute();
       }

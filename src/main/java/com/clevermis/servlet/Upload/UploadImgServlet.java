@@ -50,13 +50,34 @@ public class UploadImgServlet extends HttpServlet {
     String code = request.getParameter("code");
     int form_id = Integer.parseInt(request.getParameter("form_id"));
     String size = request.getParameter("size");
+    int num = Integer.parseInt(request.getParameter("num"));
+    System.out.println(num);
 
-    /**得到当前web项目的根目录，并在根目录中添加一个子文件夹/static/imgs*/
-    String path = this.getServletContext().getRealPath("/static/imgs");
-    File file = new File(path);
-    if (!file.exists()) {
-      /**若不存在则创建*/
-      file.mkdirs();
+    /** 得到当前web项目的根目录*/
+    String path = this.getServletContext().getRealPath("/");
+    /** windows目录路径 static\imgs\ */
+    String a = "static\\imgs\\";
+    /** windows存放每个表单目录路径  */
+    String url = path + a + form_id + "\\";
+    /** 单个文件时文件名 */
+    String nc = name + code;
+    /** windows一次存放多个文件时的文件目录*/
+    String path4 = url + nc + "\\";
+    /** windows创建单文件目录 */
+    File file = new File(url);
+    /** windows创建多文件目录 */
+    File file1 = new File(path4);
+
+    if (num != 0) {
+      if (!file1.exists()) {
+        /**若不存在则创建*/
+        file1.mkdirs();
+      }
+    } else {
+      if (!file.exists()) {
+        /**若不存在则创建*/
+        file.mkdirs();
+      }
     }
 
     UploadImgServiceImpl uploadImgService = new UploadImgServiceImpl();
@@ -66,17 +87,38 @@ public class UploadImgServlet extends HttpServlet {
     /**向数据库中添加记录信息,成功返回true*/
     boolean b = uploadImgService.addFile(records, id, form_id, name, code);
     int record_id = id;
+    int x = 1;
     PrintWriter out = response.getWriter();
     for (Part part : request.getParts()) {
       if (part.getName().startsWith("myfile")) {
+        /** 得到文件名后缀*/
         String fileName = getFileName(part);
+        /** 随机文件名*/
         String tup = UUID.randomUUID() + fileName;
-        part.write(path + "\\" + tup);
         String[] att_img = {tup};
-        tup = code + name;
-        System.out.println(tup);
-        Attachments addAttachImg = new Attachments(record_id, att_img, tup, size);
-        uploadImgService.addImg(addAttachImg);
+
+        /** 判断是否为单个文件*/
+        if (num != 0) {
+          /** 每个文件名又前缀+后缀组成（前缀为从x=1开始的数字）*/
+          String x1 = x + fileName;
+          part.write(path4 + x1);
+          String x3 = form_id + "\\\\" + nc + "\\\\" + x1;
+          att_img = new String[]{x3};
+          String tup3 = x + fileName;
+          x++;
+          Attachments addAttachImg = new Attachments(record_id, att_img, tup3, size);
+          uploadImgService.addImg(addAttachImg);
+        } else {
+          tup = code + name;
+          /** 单个文件时文件名*/
+          String tup1 = code + name + fileName;
+          part.write(url + tup1);
+          String x2 = form_id + "\\" + tup1;
+          att_img = new String[]{x2};
+          Attachments addAttachImg = new Attachments(record_id, att_img, tup, size);
+          uploadImgService.addImg(addAttachImg);
+
+        }
       }
     }
     out.write(String.valueOf(b));
