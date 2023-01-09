@@ -56,10 +56,16 @@ Application context: /
 
 ### **Maintain** ###
 
-1.Clean up all data in the project
+1.Clean up all folders and pictures in the project
 
 ```sh
 rm -rf  static/imgs/*
+```
+
+2.Clean up database table data
+
+```sh
+source rmrf.sql
 ```
 
 ### **How to get involved in open source projects** ###
