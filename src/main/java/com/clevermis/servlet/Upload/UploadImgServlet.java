@@ -102,7 +102,8 @@ public class UploadImgServlet extends HttpServlet {
           /** 每个文件名又前缀+后缀组成（前缀为从x=1开始的数字）*/
           String x1 = x + fileName;
           part.write(path4 + x1);
-          String x3 = form_id + "\\\\" + nc + "\\\\" + x1;
+//          String x3 = form_id + "\\\\" + nc + "\\\\" + x1;
+          String x3 = form_id + "\\\\" + nc ;
           att_img = new String[]{x3};
           String tup3 = x + fileName;
           x++;
@@ -113,7 +114,8 @@ public class UploadImgServlet extends HttpServlet {
           /** 单个文件时文件名*/
           String tup1 = code + name + fileName;
           part.write(url + tup1);
-          String x2 = form_id + "\\" + tup1;
+//          String x2 = form_id + "\\" + tup1;
+          String x2 = String.valueOf(form_id);
           att_img = new String[]{x2};
           Attachments addAttachImg = new Attachments(record_id, att_img, tup, size);
           uploadImgService.addImg(addAttachImg);
