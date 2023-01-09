@@ -75,7 +75,7 @@ public class RecordsCountDaoImpl implements RecordsCountDao {
     try {
       conn = DataBaseDao.getConnection();
       String sql =
-          "SELECT records.`name`,records.`code`,attachments.size ,attachments.att_img ,attachments.timestamps FROM `records` INNER JOIN `attachments` ON  records.id = attachments.record_id WHERE records.form_id ="
+          "SELECT records.`name`,records.`code`,attachments.size ,attachments.att_img ,attachments.updatedAt FROM `records` INNER JOIN `attachments` ON  records.id = attachments.record_id WHERE records.form_id ="
               + form_id;
       pstm = conn.prepareStatement(sql);
       System.out.println(sql);
